@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/room'
 
 class MakersBnb < Sinatra::Base
   configure :development do
@@ -12,6 +13,14 @@ class MakersBnb < Sinatra::Base
 
   get '/test2' do
     erb :sign_up
+  end
+
+  get '/spaces/new' do
+    erb :new
+  end
+
+  post '/spaces/new' do
+    Room.new(new_space: params[:new_space]) 
   end
 
   run! if app_file == $0

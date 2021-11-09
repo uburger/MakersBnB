@@ -20,7 +20,7 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/spaces/new' do
-    Room.new(new_space: params[:new_space]) 
+    @new_room = Room.new(new_space: params[:new_space]) 
   end
 
   run! if app_file == $0

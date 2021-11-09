@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require_relative './lib/room'
 
 class MakersBnb < Sinatra::Base
   configure :development do
@@ -12,6 +13,16 @@ class MakersBnb < Sinatra::Base
 
   get '/test2' do
     erb :sign_up
+  end
+
+  get '/booking' do
+    @booked = Room.book
+    erb :booking
+  end
+  
+  post '/booking' do
+    Room.select(params[:select])
+    redirect '/booking'
   end
 
   run! if app_file == $0

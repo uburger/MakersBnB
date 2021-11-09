@@ -10,7 +10,7 @@ class User
   # The initial logic for password confirmation error has been started 
   # but not implemented
   def password_matches?
-    if @password != @confirmed_pw then
+    if @password != @confirmed_pw
       'false'
     else
       'true'

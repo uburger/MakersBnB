@@ -10,7 +10,7 @@ class MakersBnb < Sinatra::Base
     "Code 'n Pepper"
   end
 
-  get '/test2' do
+  get '/sign-up' do
     erb :sign_up
   end
 

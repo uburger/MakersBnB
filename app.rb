@@ -24,6 +24,10 @@ class MakersBnb < Sinatra::Base
     Room.select(params[:select])
     redirect '/booking'
   end
+  
+  get '/list-spaces' do
+    erb :list_space
+  end
 
   run! if app_file == $0
 end

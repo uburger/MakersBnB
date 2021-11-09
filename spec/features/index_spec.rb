@@ -5,3 +5,4 @@ feature 'homepage' do
     expect(page).to have_content "Code 'n Pepper"
   end
 end
+

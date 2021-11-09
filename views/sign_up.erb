@@ -13,16 +13,19 @@
     <center>
       <h2>Sign-up</h2>
       <form action="/sign-up" method="post">
-        <label for="name">Email</label>
-        <input name="name" type="text" placeholder="Email" required>
+        <label for="email">Email</label>
+        <input name="email" type="text" placeholder="Email" required>
         <label for="password">Password</label>
         <input name="password" type="password" placeholder="Password" required>
         <label for="confirm">Password confirmation</label>
-        <input name="confirm" type="password" placeholder="Confirm password" required>
+        <input id="confirm_password" name="confirm" type="password" placeholder="Confirm password" required>
         <input type="submit" value="Submit">
       </form>
-      <p><%= @name %></p>
+
+      <p>DELETE THE BELOW WHEN DB IS SETUP</p>
+      <p><%= @email %></p>
       <p><%= @password %></p>
+      <p><%= @confirm_password %></p>
     </center>
     </div>
 

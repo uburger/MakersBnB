@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/user'
 
 class MakersBnb < Sinatra::Base
   configure :development do
@@ -15,8 +16,9 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/sign-up' do
-    @name = params[:name]
+    @email = params[:email]
     @password = params[:password]
+    @confirmed_pw = params[:confirm]
 
     erb :sign_up
   end

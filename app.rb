@@ -23,5 +23,9 @@ class MakersBnb < Sinatra::Base
     erb :sign_up
   end
 
+  get '/sign-in' do
+    erb :sign_in
+  end
+
   run! if app_file == $0
 end

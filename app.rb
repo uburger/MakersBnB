@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require_relative './lib/room'
 
 class MakersBnb < Sinatra::Base
   configure :development do
@@ -14,6 +15,16 @@ class MakersBnb < Sinatra::Base
     erb :sign_up
   end
 
+  get '/booking' do
+    @booked = Room.book
+    erb :booking
+  end
+  
+  post '/booking' do
+    Room.select(params[:select])
+    redirect '/booking'
+  end
+  
   get '/list-spaces' do
     erb :list_space
   end

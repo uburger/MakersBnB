@@ -14,5 +14,12 @@ class MakersBnb < Sinatra::Base
     erb :sign_up
   end
 
+  post '/sign-up' do
+    @name = params[:name]
+    @password = params[:password]
+
+    erb :sign_up
+  end
+
   run! if app_file == $0
 end

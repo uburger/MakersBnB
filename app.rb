@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/user'
 require_relative './lib/room'
 
 class MakersBnb < Sinatra::Base
@@ -11,7 +12,15 @@ class MakersBnb < Sinatra::Base
     "Code 'n Pepper"
   end
 
-  get '/test2' do
+  get '/sign-up' do
+    erb :sign_up
+  end
+
+  post '/sign-up' do
+    @email = params[:email]
+    @password = params[:password]
+    @confirmed_pw = params[:confirm]
+
     erb :sign_up
   end
 

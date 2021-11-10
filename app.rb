@@ -24,6 +24,11 @@ class MakersBnb < Sinatra::Base
     erb :sign_up
   end
 
+
+  get '/sign-in' do
+    erb :sign_in
+  end
+
   get '/spaces/new' do
     erb :new
   end
@@ -42,5 +47,6 @@ class MakersBnb < Sinatra::Base
     redirect '/booking'
   end
   
+
   run! if app_file == $0
 end

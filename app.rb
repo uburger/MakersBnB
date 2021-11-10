@@ -29,7 +29,7 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/spaces/new' do
-    @new_room = Room.new(new_space: params[:new_space]) 
+    @new_space = Room.new(new_space: params[:new_space]) 
   end
 
   get '/booking' do
@@ -42,9 +42,5 @@ class MakersBnb < Sinatra::Base
     redirect '/booking'
   end
   
-  get '/list-spaces' do
-    erb :list_space
-  end
-
   run! if app_file == $0
 end

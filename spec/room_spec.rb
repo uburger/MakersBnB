@@ -7,4 +7,11 @@ describe Room do
       expect(new_room).to include 'Cosiest broom closet in London'
     end
   end
+
+  describe '.all' do
+    it 'returns a list of spaces' do
+      spaces = Room.all
+      expect(spaces).to include 'Haunted hill'
+    end
+  end
 end

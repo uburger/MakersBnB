@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Booking</title>
+    <title>Spaces</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,17 +9,28 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   </head>
   <body>
+    <br>
+    <h2> Spaces: </h2>
+    <form action='/spaces/new' method='GET'>
+      <input type='submit' name='book a room' value='List a new space'>
+    </form><br>
+    
+    <% @all_rooms.each{ |rooms| %>
+    <%= rooms%>
+    <br>
+    <%}%>
 
-    <form action='/booking' method='POST'>
+    <h2> Book a Space: </h2>
+    <form action='/spaces' method='POST'>
       <input type='text' name='select'>
-      <input type='submit' name='book a room' value='book a room'>
-    </form>
+      <input type='submit' name='book a room' value='book this room'>
+    </form><br>
 
-    <h1> Your bookings: </h1>
+    <h2> Your bookings: </h2>
     <% @booked.each{ |room| %>
-  <%= room%>
-  <br>
-<%}%>
+    <%= room%>
+    <br>
+    <%}%>
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

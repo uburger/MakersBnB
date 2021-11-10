@@ -1,16 +1,16 @@
 class Room
-  attr_reader :selected_rooms
+  attr_reader :selected_rooms, :available_rooms
   @selected_rooms = []
-  
+  @available_rooms = ['Haunted hill', 'Trump tower', 'TheCorleones','Bates Mansion']
+   
   def self.all
-    ['Haunted hill',
-    'Trump tower',
-    'The Corleones',
-    'Bates Mansion']
+    @available_rooms.map { |room| room }
   end
 
-  def self.new(new_space:)
-    new_space
+  def self.add(new_space)
+    # @new_space
+    @available_rooms << new_space
+    # p available rooms
   end
 
   def self.select(selected_room)

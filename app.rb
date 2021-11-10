@@ -15,6 +15,13 @@ class MakersBnb < Sinatra::Base
     erb :sign_up
   end
 
+  get '/spaces/new' do
+    erb :new
+  end
+
+  post '/spaces/new' do
+    @new_room = Room.new(new_space: params[:new_space]) 
+
   get '/booking' do
     @booked = Room.book
     erb :booking

@@ -3,7 +3,7 @@ class DatabaseConnection
     @connection = 
         ENV['ENVIRONMENT'] == 'test'? 
         :PG.connection(dbname: 'makersbnb_test') 
-        : PG.connect(dbname: 'chitter')
+        : PG.connect(dbname: 'makersbnb')
   end
 
   def self.query(sql)

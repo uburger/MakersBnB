@@ -3,7 +3,7 @@ class Room
   @selected_rooms = []
   
   def self.new(new_space:)
-    p new_space
+    new_space
   end
 
   def self.select(selected_room)

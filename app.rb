@@ -30,6 +30,7 @@ class MakersBnb < Sinatra::Base
 
   post '/spaces/new' do
     @new_room = Room.new(new_space: params[:new_space]) 
+  end
 
   get '/booking' do
     @booked = Room.book

@@ -2,6 +2,13 @@ class Room
   attr_reader :selected_rooms
   @selected_rooms = []
   
+  def self.all
+    ['Haunted hill',
+    'Trump tower',
+    'The Corleones',
+    'Bates Mansion']
+  end
+
   def self.new(new_space:)
     new_space
   end

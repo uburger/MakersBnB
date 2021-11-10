@@ -8,22 +8,22 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   </head>
-  <body style="background: hsl(184, 82%, 84%);">
+  <body style="background: hsl(184, 82%, 94%); overflow-y: hidden;">
 
     <!-- Nav start -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand text-center text-dark" style="font-size: 12px;" href="#">Makers<br>BnB</a>
+        <a class="navbar-brand text-center text-light" style="font-size: 12px;" href="#">Makers<br>BnB</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active text-dark" aria-current="page" href="#">About</a>
+              <a class="nav-link active text-light d-none d-sm-none d-md-none d-lg-block" aria-current="page" href="./about">About</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark" href="#">Login</a>
+            <li class="nav-item d-none d-xs-none d-sm-none d-md-none d-lg-block">
+              <a class="nav-link text-light" href="./sign-in">Login</a>
             </li>
           </ul>
         </div>
@@ -32,25 +32,27 @@
     <!-- Nav end -->
 
     <!-- Form start -->
-    <div class="container w-25" style="margin-top: 180px;">
-      <h2 class="mb-4 text-center text-dark">Sign-up</h2>
-      <form action="/sign-up" class="row g-1" method="post">
-        <div class="col-12 mb-2">
-          <label for="email" class="form-label text-dark">Email</label>
-          <input name="email" class="form-control" type="text" placeholder="Email" required>
-        </div>
-        <div class="col-12 mb-2">
-          <label for="password" class="form-label text-dark">Password</label>
-          <input name="password" class="form-control" type="password" placeholder="Password" required>
-        </div>
-        <div class="col-12">
-          <label for="confirm" class="form-label text-dark">Password confirmation</label>
-          <input id="confirm_password" class="form-control" name="confirm" type="password" placeholder="Confirm password" required>
-        </div>
-        <div class="col-12 mt-3 mb-5 d-flex justify-content-center">
-          <input class="btn btn-secondary" type="submit" value="Submit">
-        </div>
-      </form>
+    <div class="container">
+      <div class="container row p-3 border rounded border-info d-flex justify-content-center" style="margin-top: 180px; background: hsl(184, 70%, 80%);">
+        <h2 class="mb-4 col-12 text-center text-dark">Sign-up</h2>
+        <form action="/sign-up" class="row g-1" method="post">
+          <div class="col-12 mb-2">
+            <label for="email" class="form-label text-dark">Email</label>
+            <input name="email" class="form-control" type="text" placeholder="Email" required>
+          </div>
+          <div class="col-12 mb-2">
+            <label for="password" class="form-label text-dark">Password</label>
+            <input name="password" class="form-control" type="password" placeholder="Password" required>
+          </div>
+          <div class="col-12">
+            <label for="confirm" class="form-label text-dark">Password confirmation</label>
+            <input id="confirm_password" class="form-control" name="confirm" type="password" placeholder="Confirm password" required>
+          </div>
+          <div class="col-12 mt-3 mb-5 d-flex justify-content-center">
+            <input class="btn btn-secondary" type="submit" value="Submit">
+          </div>
+        </form>
+      </div>
     </div>
     <!-- Form end -->
 

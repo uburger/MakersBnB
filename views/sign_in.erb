@@ -8,22 +8,50 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   </head>
-  <body>
-    <div class="container">
-      <h2>Log in to MakersBnB</h2>
-      <form action="/sign-in" method="post">
-        <label for="email">Email</label>
-        <input name="email" type="text" placeholder="Email" required>
-        <label for="password">Password</label>
-        <input name="password" type="password" placeholder="Password" required>
-        <input type="submit" value="Log in">
-      </form>
+  <body style="background: hsl(184, 82%, 94%); overflow-y: hidden;">
 
-      <p>DELETE THE BELOW WHEN DB IS SETUP</p>
-      <p><%= @email %></p>
-      <p><%= @password %></p>
-      <p><%= @confirm_password %></p>
+    <!-- Nav start -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand text-center text-light" style="font-size: 12px;" href="#">Makers<br>BnB</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active text-light d-none d-sm-none d-md-none d-lg-block" aria-current="page" href="./about">About</a>
+            </li>
+            <li class="nav-item d-none d-xs-none d-sm-none d-md-none d-lg-block">
+              <a class="nav-link text-light" href="./sign-in">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Nav end -->
+
+    <!-- Form start -->
+    <div class="container d-flex justify-content-center">
+      <div class="container col-sm-9 col-md-6 col-lg-4 col-xl-4 row p-3 border rounded border-info d-flex justify-content-center" style="margin-top: 180px; background: hsl(184, 70%, 80%);">
+        <h2 class="mb-4 col-12 text-center text-dark">Sign-up</h2>
+        <form action="/sign-up" class="row g-1" method="post">
+          <div class="col-12 mb-2">
+            <label for="email" class="form-label text-dark">Email</label>
+            <input name="email" class="form-control" type="text" placeholder="Email" required>
+          </div>
+          <div class="col-12 mb-2">
+            <label for="password" class="form-label text-dark">Password</label>
+            <input name="password" class="form-control" type="password" placeholder="Password" required>
+          </div>
+          <div class="col-12 mt-3 mb-5 d-flex justify-content-center">
+            <input class="btn btn-secondary" type="submit" value="Submit">
+          </div>
+          <a class="col-12 mt-1 d-flex justify-content-center" style="font-size: 10px;" href="./sign-up">Register</a>
+        </form>
+      </div>
     </div>
+    <!-- Form end -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

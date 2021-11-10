@@ -50,7 +50,7 @@ DB instructions:
 5. Create test database using the psql command CREATE DATABASE makersbnb_test;
 6. Create table by connecting to the makersbnb_test database
 7. Connect to the database using the pqsl command \c makersbnb_test
-8. Create a table using the psql command CREATE TABLE spaces(id SERIAL PRIMARY KEY, url VARCHAR(60));
+8. Create a spaces table using the psql command CREATE TABLE spaces(id SERIAL PRIMARY KEY, url VARCHAR(60));
 9. Insert value using the psql command 
 
 INSERT INTO spaces (message) values ('Haunted hill');
@@ -60,3 +60,4 @@ INSERT INTO spaces (message) values ('Trump Tower');
 INSERT INTO spaces (message) values ('The Corleones');
 
 INSERT INTO spaces (message) values ('Bates Mansion');
+10. Create a booking table using the psql command CREATE TABLE booking(id SERIAL PRIMARY KEY, url VARCHAR(60));

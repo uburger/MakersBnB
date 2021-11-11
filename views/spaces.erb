@@ -8,30 +8,59 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   </head>
-  <body>
-    <br>
-    <h2> Spaces: </h2>
-    <div>
-      <a class="btn btn-secondary" href="./spaces/new">List new space</a>
+  <body style="background: hsl(184, 82%, 94%); overflow-y: hidden;">
+    <!-- Nav start -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand text-center text-light" style="font-size: 12px;" href="./spaces">Makers<br>BnB</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active text-light d-none d-sm-none d-md-none d-lg-block" aria-current="page" href="./about">About</a>
+            </li>
+            <li class="nav-item d-none d-xs-none d-sm-none d-md-none d-lg-block">
+              <a class="nav-link text-light" href="./sign-in">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Nav end -->
+
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <h2> Spaces: </h2>
+        
+        <div class="col-12 d-flex justify-content-center text-center">
+          <% @all_rooms.each{ |rooms| %>
+          <%= rooms%>
+          <br>
+          <%}%>
+        </div>
+        <div class="col-12 mb-5 mt-2 d-flex justify-content-center">
+          <a class="btn btn-secondary" href="./spaces/new">List new space</a>
+        </div>
+
+        <h2> Book a Space: </h2>
+        <div class="col-12 mb-5 d-flex justify-content-center text-center">
+          <form action='/spaces' method='POST'>
+            <input type='text' name='select'>
+            <input type='submit' name='book a room' value='book this room'>
+          </form>
+        </div>
+
+        <h2> Your bookings: </h2>
+        <div class="col-12 text-center">
+          <% @booked.each{ |room| %>
+          <%= room%>
+          <br>
+          <%}%>
+        </div>
+      </div>
     </div>
-    
-    <% @all_rooms.each{ |rooms| %>
-    <%= rooms%>
-    <br>
-    <%}%>
-
-    <h2> Book a Space: </h2>
-    <form action='/spaces' method='POST'>
-      <input type='text' name='select'>
-      <input type='submit' name='book a room' value='book this room'>
-    </form><br>
-
-    <h2> Your bookings: </h2>
-    <% @booked.each{ |room| %>
-    <%= room%>
-    <br>
-    <%}%>
-    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

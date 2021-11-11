@@ -24,19 +24,12 @@ class MakersBnb < Sinatra::Base
     erb :sign_up
   end
 
-
   get '/sign-in' do
     erb :sign_in
   end
 
   get '/spaces/new' do
-    # @all_rooms = Room.all
     erb :new
-  end
-
-  post '/spaces/new' do
-    Room.add(params[:new_space])
-    erb :spaces
   end
 
   get '/spaces' do
@@ -47,6 +40,7 @@ class MakersBnb < Sinatra::Base
   
   post '/spaces' do
     Room.select(params[:select])
+    Room.add(params[:new_space])
     redirect '/spaces'
   end
   

@@ -1,14 +1,14 @@
 require 'pg'
 
 def setup_test_database
-  connection = PG.connect(dbname: 'makersbnb_test_test')
-  connection.exec('TRUNCATE makersbnb_test_test;')
+  connection = PG.connect(dbname: 'makersbnb_test')
+  connection.exec('TRUNCATE makersbnb_test;')
 end
 
 def add_row_to_test_database
-  connection = PG.connect(dbname: 'makersbnb_test_test')
+  connection = PG.connect(dbname: 'makersbnb_test')
   connection.exec (
-    INSERT INTO makersbnb_test(spaces, email, descr, price, avail)
+    "INSERT INTO makersbnb_test(spaces, email, descr, price, avail)
     VALUES ('Haunted hill', 'example1@example.com', 'A lovely place, bring a teddy bear', 9, TRUE);
     
     INSERT INTO makersbnb_test(spaces, email, descr, price, avail)
@@ -18,6 +18,6 @@ def add_row_to_test_database
     VALUES ('The Corleones', 'example3@example.com', 'Get your ransom money ready', 500, TRUE);
     
     INSERT INTO makersbnb_test(spaces, email, descr, price, avail)
-    VALUES ('Bates Mansion', 'example4@example.com', 'Ready for a scare?', 400, TRUE);
+    VALUES ('Bates Mansion', 'example4@example.com', 'Ready for a scare?', 400, TRUE);"
   )
 end

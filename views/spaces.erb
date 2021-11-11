@@ -11,9 +11,9 @@
   <body>
     <br>
     <h2> Spaces: </h2>
-    <form action='/spaces/new' method='GET'>
-      <input type='submit' name='book a room' value='List a new space'>
-    </form><br>
+    <div>
+      <a class="btn btn-secondary" href="./spaces/new">List new space</a>
+    </div>
     
     <% @all_rooms.each{ |rooms| %>
     <%= rooms%>

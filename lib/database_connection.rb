@@ -1,7 +1,7 @@
 class DatabaseConnection
   def self.setup
     @connection = 
-        ENV['ENVIRONMENT'] == 'test'? 
+        ENV['ENVIRONMENT'] == 'test' ?
         :PG.connection(dbname: 'makersbnb_test') 
         : PG.connect(dbname: 'makersbnb')
   end
@@ -10,4 +10,3 @@ class DatabaseConnection
     @connection.exec(sql)
   end
 end
-

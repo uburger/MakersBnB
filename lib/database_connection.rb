@@ -1,14 +1,16 @@
-require 'pg'
+# require 'pg'
 
-class DatabaseConnection
-  def self.setup
-    @connection = 
-        ENV['ENVIRONMENT'] == 'test' ?
-        :PG.connection(dbname: 'makersbnb_test') 
-        : PG.connect(dbname: 'makersbnb')
-  end
+# class DatabaseConnection
+#   def self.setup
+#     @connection = 
+#       if ENV['ENVIRONMENT'] == 'test'
+#         PG.connect(dbname: 'makersbnb_test') 
+#       else
+#         PG.connect(dbname: 'makersbnb')
+#       end
+#   end
 
-  def self.query(sql)
-    @connection.exec(sql)
-  end
-end
+#   def self.query(sql)
+#     @connection.exec(sql)
+#   end
+# end

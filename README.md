@@ -50,14 +50,18 @@ DB instructions:
 5. Create test database using the psql command CREATE DATABASE makersbnb_test;
 6. Create table by connecting to the makersbnb_test database
 7. Connect to the database using the pqsl command \c makersbnb_test
-8. Create a spaces table using the psql command CREATE TABLE spaces(id SERIAL PRIMARY KEY, url VARCHAR(60));
-9. Insert value using the psql command 
+8. Create a makersbnb table using the psql command CREATE TABLE makersbnb(id SERIAL PRIMARY KEY, spaces VARCHAR(60), email  VARCHAR(60), descr VARCHAR(60), price NUMERIC(3), avail BOOLEAN NOT NULL);
 
-INSERT INTO spaces (message) values ('Haunted hill');
+9. Insert rows using the psql command 
 
-INSERT INTO spaces (message) values ('Trump Tower');
+INSERT INTO makersbnb(spaces, email, descr, price, avail)
+VALUES ('Haunted hill', 'example1@example.com', 'A lovely place, bring a teddy bear', 9, TRUE);
 
-INSERT INTO spaces (message) values ('The Corleones');
+INSERT INTO makersbnb(spaces, email, descr, price, avail)
+VALUES ('Trump Tower', 'example2@example.com', 'Not a lovely place', 999, TRUE);
 
-INSERT INTO spaces (message) values ('Bates Mansion');
-10. Create a booking table using the psql command CREATE TABLE booking(id SERIAL PRIMARY KEY, url VARCHAR(60));
+INSERT INTO makersbnb(spaces, email, descr, price, avail)
+VALUES ('The Corleones', 'example3@example.com', 'Get your ransom money ready', 500, TRUE);
+
+INSERT INTO makersbnb(spaces, email, descr, price, avail)
+VALUES ('Bates Mansion', 'example4@example.com', 'Ready for a scare?', 400, TRUE);

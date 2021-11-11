@@ -1,25 +1,36 @@
 require 'pg'
+# require_relative '../database_connection_setup'
 
 class Room
   attr_reader :selected_rooms, :available_rooms
   @selected_rooms = []
-  @available_rooms = ['Haunted hill', 'Trump tower', 'TheCorleones','Bates Mansion']
+  @available_rooms = []
   
   def initialize
     
   end
 
   def self.all
+    if ENV['ENVIRONMENT'] == 'test'
+      connection = PG.connect(dbname: 'makersbnb_test') 
+    else
+      connection = PG.connect(dbname: 'makersbnb')
+    end
+    
+    @available_rooms = connection.exec('SELECT spaces FROM rooms;')
     @available_rooms.map { |room| room }
+    @available_rooms.values
   end
 
-  def self.add(new_space)
-    result =
-    DatabaseConnection.query('SELECT * FROM makersbnb ORDER BY id DESC;')
-      # result.map do |room|
-      #   Room.new
-      # end
-      p result
+  def self.add(new_space, email, descr, price, avail)
+    if ENV['ENVIRONMENT'] == 'test'
+      connection = PG.connect(dbname: 'makersbnb_test')
+    else
+      connection = PG.connect(dbname: 'makersbnb')
+    end
+    
+    connection.exec("INSERT INTO rooms (spaces, email, descr, price, avail) VALUES ('#{new_space}', '#{email}', '#{descr}', '#{price}', '#{avail}');")
+
   end
 
   def self.select(selected_room)

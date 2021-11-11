@@ -4,6 +4,6 @@ feature 'adding a room' do
     
     fill_in 'new_space', with: 'Cosiest broom closet in London'
     click_button('List my Space')
-    expect(page).to have_content('Cosiest broom closet in London')
+    expect(page).to have_content('Cosiest broom closet in London', 'Haunted hill' )
   end
 end

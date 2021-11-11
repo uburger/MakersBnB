@@ -2,7 +2,7 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/user'
 require_relative './lib/room'
-require 'database_connection_setup'
+# require './database_connection_setup'
 
 
 class MakersBnb < Sinatra::Base
@@ -42,7 +42,7 @@ class MakersBnb < Sinatra::Base
   
   post '/spaces' do
     Room.select(params[:select])
-    Room.add(params[:new_space])
+    Room.add(params[:new_space], '1', '1', 1, 1)
     redirect '/spaces'
   end
   

@@ -17,8 +17,8 @@ class Room
       connection = PG.connect(dbname: 'makersbnb')
     end
     
-    p @available_rooms = connection.exec('SELECT spaces FROM rooms;')
-    p @available_rooms.map { |room| room.values.first }
+    @available_rooms = connection.exec('SELECT spaces FROM rooms;')
+    @available_rooms.map { |room| room.values.first }
   end
 
   def self.add(new_space, email, descr, price, avail)
@@ -28,7 +28,8 @@ class Room
       connection = PG.connect(dbname: 'makersbnb')
     end
     
-    connection.exec("INSERT INTO rooms (spaces, email, descr, price, avail) VALUES ('#{new_space}', '#{email}', '#{descr}', '#{price}', '#{avail}');")
+    connection.exec("INSERT INTO rooms (spaces, email, descr, price, avail) 
+      VALUES ('#{new_space}', '#{email}', '#{descr}', '#{price}', '#{avail}');")
 
   end
 

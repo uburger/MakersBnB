@@ -16,16 +16,31 @@
     </div>
     
     <% @all_rooms.each{ |rooms| %>
-    <%= rooms%>
-    <br>
+      <a href="/spaces/details"><%=rooms%></a>
+      <%# <form action='/spaces' method='POST'>
+      <button 
+        action='/spaces' 
+        method='POST'
+        button type="button" 
+        name='select' 
+        onclick="alert('You have booked this space!')">Book
+      </button> %>
+
+      <%# <input type='submit' name='select' value='book this room'> %>
+      </form><br>
+      <br>
+      
+    
+
+    
+
+
+    <%# <h2> Book a Space: </h2> %>
+    <%# <form action='/spaces' method='POST'> %>
+      <%# <input type='text' name='select'> %>
+      <%# <input type='submit' name='book a room' value='book this room'> %>
+    <%# </form><br> %>
     <%}%>
-
-    <h2> Book a Space: </h2>
-    <form action='/spaces' method='POST'>
-      <input type='text' name='select'>
-      <input type='submit' name='book a room' value='book this room'>
-    </form><br>
-
     <h2> Your bookings: </h2>
     <% @booked.each{ |room| %>
     <%= room%>

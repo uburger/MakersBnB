@@ -37,7 +37,7 @@ class MakersBnb < Sinatra::Base
   get '/spaces/new' do
     erb :new
   end
-
+''
   get '/spaces' do
     @booked = Room.book
     @all_rooms = Room.all
@@ -46,10 +46,13 @@ class MakersBnb < Sinatra::Base
   
   post '/spaces' do
     Room.select(params[:select])
-    Room.add(params[:new_space], '1', '1', 1, 1)
+    Room.add(params[:new_space], '1', '1', 1, '2021-11-12')
     redirect '/spaces'
   end
   
+  get '/dates' do
+    erb :dates
+  end
 
   run! if app_file == $0
 end

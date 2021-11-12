@@ -1,4 +1,6 @@
-CREATE TABLE rooms(id SERIAL PRIMARY KEY, spaces VARCHAR(60), email  VARCHAR(60), descr VARCHAR(60), price NUMERIC(3), avail BOOLEAN NOT NULL);
+CREATE TABLE rooms(id SERIAL PRIMARY KEY, spaces VARCHAR(60), email  VARCHAR(60), descr VARCHAR(60), price NUMERIC(3), dates_booked DATE);
+
+
 
 INSERT INTO rooms(spaces, email, descr, price, avail)
 VALUES ('Haunted hill', 'example1@example.com', 'A lovely place, bring a teddy bear', 9, TRUE);
@@ -13,3 +15,4 @@ INSERT INTO rooms(spaces, email, descr, price, avail)
 VALUES ('Bates Mansion', 'example4@example.com', 'Ready for a scare?', 400, TRUE);
 
 CREATE TABLE makersbnb_test(id SERIAL PRIMARY KEY, spaces VARCHAR(60), email  VARCHAR(60), descr VARCHAR(60), price NUMERIC(3), avail BOOLEAN NOT NULL);
+

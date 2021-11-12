@@ -22,14 +22,14 @@ class Room
     @available_rooms.values
   end
 
-  def self.add(new_space, email, descr, price, avail)
+  def self.add(new_space, email, descr, price, dates_booked)
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'makersbnb_test')
     else
       connection = PG.connect(dbname: 'makersbnb')
     end
     
-    connection.exec("INSERT INTO rooms (spaces, email, descr, price, avail) VALUES ('#{new_space}', '#{email}', '#{descr}', '#{price}', '#{avail}');")
+    connection.exec("INSERT INTO rooms (spaces, email, descr, price, dates_booked) VALUES ('#{new_space}', '#{email}', '#{descr}', '#{price}', '#{dates_booked}');")
 
   end
 

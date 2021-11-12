@@ -16,18 +16,14 @@
     </div>
     
     <% @all_rooms.each{ |rooms| %>
-      <a href="/spaces/details"><button onclick="alert('You have booked this space!')" ><%=rooms%></button></a>
+      <a href="/spaces/details"><%=rooms%></a>
+        <button
+          href="/spaces/details"
+          onclick="alert('You have sent a booking request for <%=rooms%>!')"> Request 
+        </button>
       <%# <form action='/spaces' method='POST'>
-      <button 
-        action='/spaces' 
-        method='POST'
-        button type="button" 
-        name='select' 
-        onclick="alert('You have booked this space!')">Book
-      </button> %>
-
       <%# <input type='submit' name='select' value='book this room'> %>
-      </form><br>
+      <br>
       <br>
       
     

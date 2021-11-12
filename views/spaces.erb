@@ -16,7 +16,7 @@
     </div>
     
     <% @all_rooms.each{ |rooms| %>
-      <a href="/spaces/details"><%=rooms%></a>
+      <a href="/spaces/details"><button onclick="alert('You have booked this space!')" ><%=rooms%></button></a>
       <%# <form action='/spaces' method='POST'>
       <button 
         action='/spaces' 

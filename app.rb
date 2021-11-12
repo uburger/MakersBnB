@@ -49,6 +49,10 @@ class MakersBnb < Sinatra::Base
     Room.add(params[:new_space], '1', '1', 1, 1)
     redirect '/spaces'
   end
+
+  get '/spaces/details' do
+    'details'
+  end
   
 
   run! if app_file == $0

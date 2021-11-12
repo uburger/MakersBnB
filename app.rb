@@ -23,11 +23,15 @@ class MakersBnb < Sinatra::Base
     @password = params[:password]
     @confirmed_pw = params[:confirm]
 
-    erb :sign_up
+    redirect :spaces
   end
 
   get '/sign-in' do
     erb :sign_in
+  end
+  
+  post '/sign-in' do
+    redirect :spaces
   end
 
   get '/spaces/new' do

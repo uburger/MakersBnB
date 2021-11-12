@@ -11,15 +11,28 @@ class Room
   end
 
   def self.all
+
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'makersbnb_test') 
     else
       connection = PG.connect(dbname: 'makersbnb')
     end
     
-    @available_rooms = connection.exec('SELECT spaces FROM rooms;')
-    @available_rooms.map { |room| room }
-    @available_rooms.values
+    @available_rooms = connection.exec('SELECT * FROM rooms;')
+    #@available_rooms.map { |room| room }
+    @available_rooms.map{ |room| room}
+  end
+
+  def self.filter(date)
+    if ENV['ENVIRONMENT'] == 'test'
+      connection = PG.connect(dbname: 'makersbnb_test') 
+    else
+      connection = PG.connect(dbname: 'makersbnb')
+    end
+    
+    @available_rooms = connection.exec('SELECT * FROM rooms;')
+    #@available_rooms.map { |room| room }
+    @available_rooms.select{ |room| room[:dates_booked] != date}
   end
 
   def self.add(new_space, email, descr, price, dates_booked)
@@ -33,7 +46,7 @@ class Room
 
   end
 
-  def self.select(selected_room)
+  def self.selected(selected_room)
     @selected_rooms << selected_room  
   end
 

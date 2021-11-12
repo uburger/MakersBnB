@@ -45,7 +45,7 @@ class MakersBnb < Sinatra::Base
   end
   
   post '/spaces' do
-    Room.select(params[:select])
+    Room.selected(params[:select])
     Room.add(params[:new_space], '1', '1', 1, '2021-11-12')
     redirect '/spaces'
   end

@@ -1,4 +1,4 @@
-CREATE TABLE makersbnb(id SERIAL PRIMARY KEY, spaces VARCHAR(60), email  VARCHAR(60), descr VARCHAR(60), price NUMERIC(3), avail BOOLEAN NOT NULL);
+CREATE TABLE spaces(id SERIAL PRIMARY KEY, rooms VARCHAR(60), email  VARCHAR(60), descr VARCHAR(60), price NUMERIC(3), avail BOOLEAN NOT NULL);
 
 INSERT INTO makersbnb(spaces, email, descr, price, avail)
 VALUES ('Haunted hill', 'example1@example.com', 'A lovely place, bring a teddy bear', 9, TRUE);
